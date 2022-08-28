@@ -33,7 +33,7 @@ module.exports = function () {
             },
          }),
          new HtmlWebpackPlugin({
-            template: './index.html',
+            template: '../public/index.html',
          }),
          new CopyWebpackPlugin({
             patterns: [{ from: 'static', noErrorOnMissing: true }],
@@ -41,6 +41,7 @@ module.exports = function () {
       ],
       resolve: {
          alias: {
+            '@/types': path.resolve(__dirname, '../types'),
             '@': path.resolve(__dirname, '../client'),
          },
          extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],

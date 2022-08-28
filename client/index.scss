@@ -1,13 +1,15 @@
 // globals
 :root {
    --color-primary: #113377;
+   --color-primary-light1: #205acf;
    --color-secondary: #568ea3;
    --color-black: #1e1e1e;
    --color-white: #fbf9ff;
 
+   --content-min-width: 20.5rem;
    --content-max-width: 62.5rem;
-   --toolbar-default-width: calc(4 / 13 * var(--content-max-width));
-   --display-default-width: calc(9 / 13 * var(--content-max-width));
+   --screen-width: 100vw;
+   --content-width: clamp(var(--content-min-width), var(--screen-width), var(--content-max-width));
 }
 
 // use border-box on all

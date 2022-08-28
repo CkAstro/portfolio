@@ -1,2 +1,1 @@
 export * from './NucleoDisplay';
-export * from './MouseLocation';

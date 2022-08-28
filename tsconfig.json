@@ -13,10 +13,11 @@
       "forceConsistentCasingInFileNames": true,
       "useUnknownInCatchVariables": true,
       "paths": {
+         "@/types": ["types"],
          "@/*": ["client/*"]
       },
-      "typeRoots": ["types", "node_modules/@types"],
+      "typeRoots": ["./types", "node_modules/@types"],
       "baseUrl": "."
    },
-   "include": ["client", "server"]
+   "include": ["client", "server", "types", "test"]
 }

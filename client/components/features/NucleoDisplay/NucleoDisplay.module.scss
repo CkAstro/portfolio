@@ -1,0 +1,71 @@
+.nucleo {
+   position: absolute;
+   top: 0;
+   left: 0.625rem;
+   right: 0;
+   bottom: 3.125rem;
+
+   .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+   }
+}
+
+.spotlight {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: #2e2e2e;
+}
+
+.nucleo__element {
+   rect {
+      transition: fill 1.5s;
+
+      &.mouseOver {
+         fill: #3e3e3e;
+      }
+   }
+
+   text {
+      transition: fill 1s;
+
+      &.mouseOver {
+         fill: #7d7d7d;
+      }
+
+      &.mouseOver.stable {
+         fill: #cc2222;
+      }
+   }
+}
+
+.learnMore {
+   --squareSize: 66px;
+   position: absolute;
+   bottom: 0;
+   left: calc(2 * var(--squareSize) + 3px);
+   height: calc(var(--squareSize) - 3px);
+   width: calc(5 * var(--squareSize) - 6px);
+
+   a {
+      display: flex;
+      flex-direction: column;
+   }
+
+   div {
+      font-size: 0.875rem;
+      text-align: right;
+      color: #aaa;
+      transition: all 0.5s;
+   }
+
+   &:hover div {
+      color: #933;
+   }
+}

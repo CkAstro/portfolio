@@ -286,7 +286,7 @@ module.exports = {
             'react/self-closing-comp': 'warn',
             'react/void-dom-elements-no-children': 'error',
             // JSX-specific rules - https://github.com/jsx-eslint/eslint-plugin-react#jsx-specific-rules
-            'react/jsx-boolean-value': ['warn', 'always'],
+            'react/jsx-boolean-value': ['warn', 'never'],
             'react/jsx-curly-brace-presence': ['warn', 'never'],
             'react/jsx-fragments': 'warn',
             'react/jsx-key': [
