@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Section, Navbar } from '@/components';
-import { Header, About } from '@/sections';
+import { Header, About, Contact } from '@/sections';
 
 export const App = (): JSX.Element => {
    const [scrollValue, setScrollValue] = useState(0);
@@ -27,6 +27,13 @@ export const App = (): JSX.Element => {
             }}
          >
             <About />
+         </Section>
+         <Section
+            navId="contact"
+            hasContent
+            style={{ minHeight: '100vh', background: 'var(--color-white)' }}
+         >
+            <Contact />
          </Section>
       </div>
    );

@@ -1,0 +1,75 @@
+.container {
+   --max-width: 50rem;
+
+   min-width: min(calc(100% - 1.5rem), 26.875rem);
+   max-width: var(--max-width);
+   padding: 0 0.75rem;
+   margin: 0 auto;
+
+   @media screen and (max-width: 28.75rem) {
+      --max-width: calc(100vw - 1.5rem);
+   }
+}
+
+form {
+   display: grid;
+   grid-template-columns: 6.25rem 1fr 1fr 6.25rem;
+   grid-column-gap: 0.5rem;
+   grid-row-gap: 0.5rem;
+   max-width: var(--max-width);
+
+   .form__name {
+      grid-column-start: 1;
+      grid-column-end: 3;
+
+      input {
+         width: 100%;
+      }
+   }
+
+   .form__email {
+      grid-column-start: 3;
+      grid-column-end: 5;
+
+      input {
+         width: 100%;
+      }
+   }
+
+   .form__message {
+      grid-column-start: 1;
+      grid-column-end: 5;
+
+      textarea {
+         margin: 0;
+         padding: 0.25rem;
+         width: 37.5rem;
+         min-width: min(100%, 26.875rem);
+         max-width: var(--max-width);
+         min-height: 5.75rem;
+         max-height: 13.5rem;
+      }
+   }
+
+   .form__name.inactive,
+   .form__email.inactive,
+   .form__message.inactive {
+      color: #757575;
+   }
+
+   .form__submit {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin: 0;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      background: #bbb;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      :hover {
+         background: #aaa;
+      }
+   }
+}
