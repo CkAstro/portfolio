@@ -49,7 +49,7 @@ declare module '*.bmp' {
 
 declare module '*.webp' {
    const content: string;
-   export default content;
+   export = content;
 }
 
 declare module '*.svg' {

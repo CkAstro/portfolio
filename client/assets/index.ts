@@ -1,1 +1,1 @@
-export * from './latex';
+export * from './img';

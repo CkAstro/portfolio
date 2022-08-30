@@ -6,8 +6,9 @@
    --color-black: #1e1e1e;
    --color-white: #fbf9ff;
 
+   --content-ideal-width: 76.25rem;
    --content-min-width: 20.5rem;
-   --content-max-width: 62.5rem;
+   --content-max-width: var(--content-ideal-width);
    --screen-width: 100vw;
    --content-width: clamp(var(--content-min-width), var(--screen-width), var(--content-max-width));
 }

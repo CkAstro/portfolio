@@ -1,0 +1,167 @@
+.container {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.modal {
+   --size: 1.75rem;
+   --border: 3px;
+   --width: 70%;
+   --height: 70%;
+
+   width: 0;
+   height: 0;
+   background: var(--color-white);
+   border: var(--border) solid var(--color-primary);
+   position: relative;
+
+   animation: 0.3s 0s 1 popUp;
+   -moz-animation: 0.3s 0s 1 popUp;
+   -webkit-animation: 0.3s 0s 1 popUp;
+
+   animation-fill-mode: forwards;
+   -moz-animation-fill-mode: forwards;
+   -webkit-animation-fill-mode: forwards;
+
+   @keyframes popUp {
+      to {
+         width: var(--width);
+         height: var(--height);
+      }
+   }
+
+   .content {
+      position: absolute;
+      top: var(--size);
+      left: var(--border);
+      right: var(--border);
+      bottom: var(--size);
+      overflow: hidden;
+
+      & * {
+         transform: scale(0);
+   
+         animation: 0.25s 0s 1 reveal;
+         -moz-animation: 0.25s 0s 1 reveal;
+         -webkit-animation: 0.25s 0s 1 reveal;
+   
+         animation-fill-mode: forwards;
+         -moz-animation-fill-mode: forwards;
+         -webkit-animation-fill-mode: forwards;
+      }
+   
+      @keyframes reveal {
+         to {
+            transform: scale(1);
+         }
+      }
+   }
+
+}
+
+.topBar {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: var(--size);
+   background: var(--color-primary);
+   display: flex;
+   justify-content: flex-end;
+
+   .close {
+      width: var(--size);
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+
+      > div {
+         color: var(--color-white);
+         line-height: 0;
+         font-size: 2rem;
+         transform: translateY(-0.1875rem)
+      }
+
+      &::before {
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         content: '';
+         background: var(--color-primary);
+         filter: brightness(100%);
+         transition: filter 0.2s;
+      }
+
+      &:hover::before {
+         filter: brightness(80%);
+      }
+   }
+}
+
+.bottomBar {
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: var(--size);
+   background: var(--color-primary);
+   display: flex;
+   align-items: center;
+
+   .page {
+      flex: 1 0 auto;
+      text-align: center;
+      color: var(--color-white);
+      font-weight: bold;
+      line-height: 1;
+   }
+
+   .prev, .next {
+      flex: 0 1 auto;
+      width: var(--size);
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+
+      > div {
+         color: var(--color-white);
+         line-height: 0;
+         font-size: 1.25rem;
+         transform: translateX(0.125rem);
+      }
+
+      &::before {
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         content: '';
+         background: var(--color-primary);
+         filter: brightness(100%);
+         transition: filter 0.2s;
+      }
+
+      &:hover::before {
+         filter: brightness(80%);
+      }
+   }
+
+   .prev {
+      transform: scaleX(-1);
+   }
+}

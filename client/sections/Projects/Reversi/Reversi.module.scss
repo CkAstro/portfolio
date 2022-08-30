@@ -1,0 +1,18 @@
+.active {
+   animation: 0.5s 0s 1 reveal;
+   -moz-animation: 0.5s 0s 1 reveal;
+   -webkit-animation: 0.5s 0s 1 reveal;
+
+   animation-fill-mode: forwards;
+   -moz-animation-fill-mode: forwards;
+   -webkit-animation-fill-mode: forwards;
+
+   @keyframes reveal {
+      from {
+         transform: translateY(12.5rem);
+      }
+      to {
+         transform: translateY(0);
+      }
+   }
+}
