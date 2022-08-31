@@ -1,6 +1,6 @@
 import { reversiShowcase } from '@/assets';
 import { Showcase } from '@/components';
-import css from './Reversi.module.scss';
+import css from '../Projects.module.scss';
 
 export const Reversi = (): JSX.Element => (
    <Showcase
@@ -14,5 +14,6 @@ export const Reversi = (): JSX.Element => (
       description="Online multi-player board game. Supports multiple games, observer mode, and replays."
       link="content/reversi"
       actionClass={css.active}
+      className={css.showcase}
    />
 );

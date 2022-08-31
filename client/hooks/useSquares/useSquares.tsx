@@ -6,8 +6,15 @@ import squareSizes from './squareSizes';
 
 export const useSquares = (): Squares => {
    const [squares, setSquares] = useState<NucleoSquare[]>([]);
-   const [squareIndex, setSquareIndex] = useState<number>(1);
+   const [squareIndex, setSquareIndex] = useState(1);
    const [squareSize, setSquareSize] = useState<SquareSize>(squareSizes[1]);
+   const [windowSize, setWindowSize] = useState([window.innerWidth, window.innerHeight]);
+
+   useEffect(() => {
+      const handleWindowResize = (): void => setWindowSize([window.innerWidth, window.innerHeight]);
+      window.addEventListener('resize', handleWindowResize);
+      return () => window.removeEventListener('resize', handleWindowResize);
+   }, []);
 
    useEffect(() => {
       const newSquareSize = squareSizes[squareIndex];
@@ -25,7 +32,7 @@ export const useSquares = (): Squares => {
       if (window.innerWidth > 1920 && squareIndex !== 2) return void setSquareIndex(2);
       return undefined;
       // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [window.innerWidth, window.innerHeight]);
+   }, [windowSize]);
 
    return { squares, squareSize };
 };

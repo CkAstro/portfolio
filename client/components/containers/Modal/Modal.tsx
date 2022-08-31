@@ -6,7 +6,7 @@ import css from './Modal.module.scss';
 
 export const Modal = (): JSX.Element => {
    const navigate = useNavigate();
-   const { topic, page } = useParams(); // these will always exist in this component
+   const { topic, page } = useParams();
 
    const route = routes[topic!];
    if (route === undefined) return <Navigate replace to="/" />;

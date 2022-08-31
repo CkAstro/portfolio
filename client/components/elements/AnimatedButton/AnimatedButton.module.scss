@@ -1,0 +1,11 @@
+.button {
+   --button-width: 9.125rem;
+
+   position: relative;
+   cursor: pointer;
+   width: var(--button-width);
+   height: 2.5rem;
+   text-align: center;
+   margin: 0 auto;
+   // color: var(--color-primary);
+}

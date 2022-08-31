@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ActionElement } from '@/components';
+import { ActionElement, AnimatedButton } from '@/components';
 import css from './Showcase.module.scss';
 
 type Props = {
@@ -9,6 +9,7 @@ type Props = {
    description: string;
    link: string;
    actionClass?: string;
+   className?: string;
 };
 
 export const Showcase = ({
@@ -18,8 +19,9 @@ export const Showcase = ({
    description,
    link,
    actionClass = '',
+   className = '',
 }: Props): JSX.Element => (
-   <ActionElement actionClass={actionClass} onlyOnce className={css.showcase}>
+   <ActionElement actionClass={actionClass} onlyOnce className={`${css.showcase} ${className}`}>
       <div className={css.imageContainer}>
          <img src={image} alt={description} />
       </div>
@@ -27,7 +29,9 @@ export const Showcase = ({
          <h1>{title}</h1>
          <h2>{components}</h2>
          <p>{description}</p>
-         <Link to={link}>Learn More</Link>
+         <Link to={link}>
+            <AnimatedButton.Style1>Learn More</AnimatedButton.Style1>
+         </Link>
       </div>
    </ActionElement>
 );

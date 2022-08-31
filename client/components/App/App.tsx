@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import { Section, Navbar, Modal } from '@/components';
 import { ContentRouter } from '@/routes';
-import { Header, About, Contact, Projects } from '@/sections';
+import { Header, About, Contact, Projects, Research } from '@/sections';
 import css from './App.module.scss';
 
 const Sections = (): JSX.Element => (
@@ -26,6 +26,9 @@ const Sections = (): JSX.Element => (
       </Section>
       <Section navId="projects" hasContent style={{ background: 'var(--color-white)' }}>
          <Projects />
+      </Section>
+      <Section navId="research" hasContent style={{ background: 'var(--color-secondary)' }}>
+         <Research />
       </Section>
       <Section
          navId="contact"

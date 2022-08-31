@@ -42,27 +42,26 @@
       left: var(--border);
       right: var(--border);
       bottom: var(--size);
-      overflow: hidden;
+      overflow-x: hidden;
 
       & * {
          transform: scale(0);
-   
+
          animation: 0.25s 0s 1 reveal;
          -moz-animation: 0.25s 0s 1 reveal;
          -webkit-animation: 0.25s 0s 1 reveal;
-   
+
          animation-fill-mode: forwards;
          -moz-animation-fill-mode: forwards;
          -webkit-animation-fill-mode: forwards;
       }
-   
+
       @keyframes reveal {
          to {
             transform: scale(1);
          }
       }
    }
-
 }
 
 .topBar {
@@ -88,7 +87,7 @@
          color: var(--color-white);
          line-height: 0;
          font-size: 2rem;
-         transform: translateY(-0.1875rem)
+         transform: translateY(-0.1875rem);
       }
 
       &::before {
@@ -127,7 +126,8 @@
       line-height: 1;
    }
 
-   .prev, .next {
+   .prev,
+   .next {
       flex: 0 1 auto;
       width: var(--size);
       background: var(--color-primary);

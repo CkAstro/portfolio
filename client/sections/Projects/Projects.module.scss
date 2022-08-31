@@ -1,0 +1,21 @@
+.showcase:not(.active) {
+   transform: translateY(12.5rem);
+}
+
+.showcase.active {
+   transform: translateY(12.5rem);
+
+   animation: 1s 0s 1 reveal;
+   -moz-animation: 1s 0s 1 reveal;
+   -webkit-animation: 1s 0s 1 reveal;
+
+   animation-fill-mode: forwards;
+   -moz-animation-fill-mode: forwards;
+   -webkit-animation-fill-mode: forwards;
+
+   @keyframes reveal {
+      to {
+         transform: translateY(0);
+      }
+   }
+}

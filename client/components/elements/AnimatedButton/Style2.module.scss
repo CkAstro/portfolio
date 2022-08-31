@@ -1,0 +1,55 @@
+.base {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   padding: 0.5rem 1rem;
+   line-height: 1.1;
+   font-weight: bold;
+   color: var(--color-primary);
+   border: 3px solid var(--color-primary);
+   border-radius: 1rem;
+}
+
+.overlay1 {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   padding: 0.5rem 1rem;
+   line-height: 1.1;
+   font-weight: bold;
+   background: var(--color-secondary);
+   color: var(--color-white);
+   border: 3px solid var(--color-primary);
+   border-radius: 1rem;
+   clip-path: polygon(-200% 0, -20% 0, 0% 50%, -20% 100%, -200% 100%);
+   transition: all 0.75s;
+
+   &.active {
+      clip-path: polygon(0% 0%, 200% 0%, 220% 50%, 200% 100%, 0% 100%);
+   }
+}
+
+.overlay2 {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   padding: 0.5rem 1rem;
+   line-height: 1.1;
+   font-weight: bold;
+   background: var(--color-primary);
+   color: var(--color-white);
+   border: 3px solid var(--color-primary);
+   border-radius: 1rem;
+   clip-path: polygon(-200% 20%, -140% 20%, -140% 0%, -100% 50%, -140% 100%, -140% 80%, -200% 80%);
+   transition: all 0.75s;
+
+   &.active {
+      clip-path: polygon(0% 20%, 110% 20%, 110% 0%, 150% 50%, 110% 100%, 110% 80%, 0% 80%);
+   }
+}

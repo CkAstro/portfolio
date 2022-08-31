@@ -1,7 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import itemEnabler from './itemEnabler';
 import mouseLocation from './mouseLocation';
 
 const reducer = combineReducers({
+   itemEnabler,
    mouseLocation,
 });
 

@@ -10,8 +10,6 @@ type Props = {
 export const Navbar = ({ scrollValue }: Props): JSX.Element => {
    const [isStatic, setIsStatic] = useState(false);
 
-   // const preventDraggable = (event: DragEvent<HTML) => event.preventDefault();
-
    useEffect(() => {
       if (scrollValue > window.innerHeight - 1) return void setIsStatic(true);
       if (scrollValue < window.innerHeight - 40) return void setIsStatic(false);
@@ -26,8 +24,7 @@ export const Navbar = ({ scrollValue }: Props): JSX.Element => {
          spy
          to={section.link}
          containerId="mainContainer"
-         // onDragStart={preventDraggable}
-         className={`noselect ${css.link}`}
+         className={`noselect ${css.link} ${isStatic ? css.static : ''}`}
       >
          {section.title}
       </Link>

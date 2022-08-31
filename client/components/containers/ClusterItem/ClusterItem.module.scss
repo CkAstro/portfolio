@@ -1,0 +1,107 @@
+.item {
+   --cluster-gap: 1.25rem;
+   --cluster-item-size: calc((100% - 2 * var(--cluster-gap)) / 3);
+   --mouseOver-timer: 0.3s;
+
+   position: relative;
+   width: var(--cluster-item-size);
+   max-height: 17.875rem;
+   aspect-ratio: 1.618;
+   border-radius: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   transition: all 1s;
+
+   @media screen and (max-width: 65.625rem) {
+      --cluster-gap: 0.75rem;
+      --cluster-item-size: calc((100% - var(--cluster-gap))/2)
+      max-width: 56.25rem;
+   }
+
+   @media screen and (max-width: 45.5rem) {
+      --cluster-item-size: 100%;
+      max-width: 30.5rem;
+   }
+
+   @media screen and (max-width: 34.5rem) {
+      width: 100%;
+      margin: 0 0.75rem;
+   }
+
+   .container {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+         opacity: 1;
+         transition: all var(--mouseOver-timer);
+      }
+
+      &.mouseOver img {
+         opacity: 0;
+      }
+
+      .topContent {
+         position: absolute;
+         bottom: 55%;
+         left: 0;
+         right: 0;
+         text-align: center;
+         opacity: 1;
+         font-weight: bold;
+         transition: all var(--mouseOver-timer);
+
+         h1 {
+            font-size: 1.75rem;
+            margin: 0;
+         }
+
+         h2 {
+            font-size: 1.125rem;
+            margin: 0;
+            font-weight: 400;
+            // color: #38388f;
+            color: var(--color-primary);
+         }
+      }
+
+      &:not(.mouseOver) .topContent {
+         bottom: 155%;
+         opacity: 0;
+      }
+
+      .bottomContent {
+         position: absolute;
+         top: 45%;
+         left: 0;
+         right: 0;
+         text-align: center;
+         opacity: 1;
+         transition: all var(--mouseOver-timer);
+
+         p {
+            padding: 0 1.25rem;
+         }
+      }
+
+      &:not(.mouseOver) .bottomContent {
+         top: 145%;
+         opacity: 0;
+      }
+   }
+
+   button {
+      margin: 0;
+      padding: 0;
+      background: none;
+      font-size: 1rem;
+      line-height: 1;
+   }
+}
