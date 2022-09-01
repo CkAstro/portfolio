@@ -26,7 +26,7 @@ export const NucleoDisplay = (): JSX.Element => {
    useMeander(divRef, squareSize);
 
    return (
-      <div ref={divRef} className={css.nucleo}>
+      <div ref={divRef} className={`noselect ${css.nucleo}`}>
          <Spotlight squares={squares} squareSize={squareSize} divRef={divRef} />
          <Overlay squares={squares} squareSize={squareSize} />
          <ElementArray squares={squares} squareSize={squareSize} divRef={divRef} />

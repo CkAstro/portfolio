@@ -1,27 +1,9 @@
-// globals
-:root {
-   --color-primary: #113377;
-   --color-primary-light1: #205acf;
-   --color-secondary: #568ea3;
-   --color-black: #1e1e1e;
-   --color-white: #fbf9ff;
+// ----- element styling adjust -----
 
-   --content-ideal-width: 76.25rem;
-   --content-min-width: 20.5rem;
-   --content-max-width: var(--content-ideal-width);
-   --screen-width: 100vw;
-   --content-width: clamp(var(--content-min-width), var(--screen-width), var(--content-max-width));
-}
-
-// use border-box on all
-*,
+*, // default to border-box on all elements
 *::before,
 *::after {
    box-sizing: border-box;
-}
-
-button {
-   border: none;
 }
 
 body,
@@ -43,23 +25,8 @@ a {
    color: var(--color-black);
 }
 
-// remove text selection
-.noselect {
-   -webkit-touch-callout: none;
-   -webkit-user-select: none;
-   -moz-user-select: none;
-   -ms-user-select: none;
-   user-select: none;
-}
-
-// remove scrollbar
-.noscrollbar {
-   scrollbar-width: none;
-   -ms-overflow-style: none;
-
-   &::-webkit-scrollbar {
-      display: none;
-   }
+button {
+   border: none;
 }
 
 // ----- layout troubleshooting (uncomment to view all borders) -----
@@ -68,3 +35,46 @@ a {
 //    color: #0f0 !important;
 //    outline: solid #f00 1px !important;
 // }
+
+// ----- global classes -----
+:global {
+   // remove text selection
+   .noselect {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+   }
+
+   // remove scrollbar
+   .noscrollbar {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+         display: none;
+      }
+   }
+
+   // center child
+   .flexCenter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+}
+
+:root {
+   --color-primary: #113377;
+   --color-primary-light1: #205acf;
+   --color-secondary: #568ea3;
+   --color-black: #1e1e1e;
+   --color-white: #fbf9ff;
+
+   --content-ideal-width: 76.25rem;
+   --content-min-width: 20.5rem;
+   --content-max-width: var(--content-ideal-width);
+   --screen-width: 100vw;
+   --content-width: clamp(var(--content-min-width), var(--screen-width), var(--content-max-width));
+}

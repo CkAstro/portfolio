@@ -9,9 +9,15 @@ export const Style2 = ({ children }: Props): JSX.Element => (
    <AnimatedButton
       render={(hasMouseOver: boolean): React.ReactNode => (
          <>
-            <div className={`${css.base} ${hasMouseOver ? css.active : ''}`}>{children}</div>
-            <div className={`${css.overlay1} ${hasMouseOver ? css.active : ''}`}>{children}</div>
-            <div className={`${css.overlay2} ${hasMouseOver ? css.active : ''}`}>{children}</div>
+            <div className={`flexCenter ${css.base} ${hasMouseOver ? css.active : ''}`}>
+               {children}
+            </div>
+            <div className={`flexCenter ${css.overlay1} ${hasMouseOver ? css.active : ''}`}>
+               {children}
+            </div>
+            <div className={`flexCenter ${css.overlay2} ${hasMouseOver ? css.active : ''}`}>
+               {children}
+            </div>
          </>
       )}
    />
