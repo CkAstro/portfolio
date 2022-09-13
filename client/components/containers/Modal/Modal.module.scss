@@ -12,8 +12,8 @@
 .modal {
    --size: 1.75rem;
    --border: 3px;
-   --width: 70%;
-   --height: 70%;
+   --width: calc(var(--modal-width) + 2 * var(--border));
+   --height: calc(var(--modal-height) + 2 * (var(--size) + var(--border)));
 
    width: 0;
    height: 0;
@@ -21,9 +21,9 @@
    border: var(--border) solid var(--color-primary);
    position: relative;
 
-   animation: 0.3s 0s 1 popUp;
-   -moz-animation: 0.3s 0s 1 popUp;
-   -webkit-animation: 0.3s 0s 1 popUp;
+   animation: 0.4s 0s 1 popUp;
+   -moz-animation: 0.4s 0s 1 popUp;
+   -webkit-animation: 0.4s 0s 1 popUp;
 
    animation-fill-mode: forwards;
    -moz-animation-fill-mode: forwards;
@@ -39,27 +39,21 @@
    .content {
       position: absolute;
       top: var(--size);
-      left: var(--border);
-      right: var(--border);
+      left: 0;
+      right: 0;
       bottom: var(--size);
-      overflow-x: hidden;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      & * {
-         transform: scale(0);
-
-         animation: 0.25s 0s 1 reveal;
-         -moz-animation: 0.25s 0s 1 reveal;
-         -webkit-animation: 0.25s 0s 1 reveal;
-
-         animation-fill-mode: forwards;
-         -moz-animation-fill-mode: forwards;
-         -webkit-animation-fill-mode: forwards;
-      }
-
-      @keyframes reveal {
-         to {
-            transform: scale(1);
-         }
+      & > * {
+         width: var(--modal-width);
+         min-width: var(--modal-width);
+         height: var(--modal-height);
+         overflow: hidden scroll;
+         display: flex;
+         flex-direction: column;
       }
    }
 }

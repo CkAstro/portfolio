@@ -1,7 +1,7 @@
 import { csm } from '@/assets';
 import { ClusterItem } from '@/components';
 
-export const CSM = (): JSX.Element => (
+export const Csm = (): JSX.Element => (
    <ClusterItem
       title={
          <span style={{ fontWeight: '400' }}>

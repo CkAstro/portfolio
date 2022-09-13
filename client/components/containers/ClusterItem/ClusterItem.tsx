@@ -46,11 +46,14 @@ export const ClusterItem = ({
    useEffect(() => {
       if (isEnabled.id !== title) return void setHasMouseOver(false);
       return void setHasMouseOver(true);
-   }, [isEnabled.id, title]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [isEnabled.id]);
 
    return (
       <div
          className={css.item}
+         onFocus={(): void => setHasMouseOver(true)}
+         onBlur={(): void => setHasMouseOver(false)}
          onMouseEnter={(): void => setHasMouseOver(true)}
          onMouseLeave={(): void => setHasMouseOver(false)}
          onTouchMove={handleTouchMove}

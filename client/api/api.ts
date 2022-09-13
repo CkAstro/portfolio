@@ -19,7 +19,8 @@ const getNeuralNet = (): Promise<any> => {
    return request.then((response) => response.data);
 };
 
-const putNeuralNet = (data: any[]): Promise<any> => axios.post(`${baseUrl}/nn`, data);
+const putNeuralNet = (data: Record<string, unknown>): Promise<any> =>
+   axios.post(`${baseUrl}/nn`, data);
 
 const getImage = (imageName: string): Promise<any> => {
    const request = axios.get(`${baseUrl}/img/${imageName}`);

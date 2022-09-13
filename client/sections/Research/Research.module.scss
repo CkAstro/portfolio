@@ -1,0 +1,16 @@
+.header {
+   transform: translateX(31.25rem);
+   transition: transform 1s;
+   color: var(--color-white);
+   text-align: center;
+
+   h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      margin-bottom: 3.125rem;
+   }
+
+   &.active {
+      transform: translateX(0);
+   }
+}

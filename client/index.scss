@@ -77,4 +77,8 @@ button {
    --content-max-width: var(--content-ideal-width);
    --screen-width: 100vw;
    --content-width: clamp(var(--content-min-width), var(--screen-width), var(--content-max-width));
+
+   --modal-max-width: 62.5rem;
+   --modal-width: min(var(--modal-max-width), var(--content-width));
+   --modal-height: 70vh;
 }

@@ -19,3 +19,30 @@
       }
    }
 }
+
+.header1 h1,
+.header2 h1 {
+   margin: 0;
+   padding: 0 1.25rem;
+   font-size: 2.5rem;
+}
+
+.header1 {
+   transform: translateX(31.25rem);
+   transition: transform 1s;
+
+   &.active {
+      transform: translateX(0);
+   }
+}
+
+.header2 {
+   margin: 6.25rem 0 3.125rem 0;
+   text-align: right;
+   transform: translateX(-31.25rem);
+   transition: transform 1s;
+
+   &.active {
+      transform: translateX(0);
+   }
+}

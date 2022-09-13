@@ -10,7 +10,7 @@ export const Reversi = (): JSX.Element => (
          </span>
       }
       components="React / Node / MongoDB / Websockets"
-      image={reversiShowcase}
+      image={'img/reversi_showcase.webp'}
       description="Online multi-player board game. Supports multiple games, observer mode, and replays."
       link="content/reversi"
       actionClass={css.active}

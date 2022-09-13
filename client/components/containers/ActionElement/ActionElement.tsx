@@ -7,6 +7,7 @@ type Props = {
    rootMargin?: string;
    className?: string;
    children: React.ReactNode;
+   [key: string]: unknown;
 };
 
 export const ActionElement = ({
@@ -21,6 +22,7 @@ export const ActionElement = ({
    const isVisible = useIsVisible(divRef, onlyOnce, rootMargin);
 
    return (
+      // eslint-disable-next-line react/jsx-props-no-spreading
       <div ref={divRef} className={`${className} ${isVisible ? actionClass : ''}`} {...rest}>
          {children}
       </div>

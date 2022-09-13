@@ -28,7 +28,7 @@ export const Emission: Record<string, SubRoute> = {
    page2: {
       id: 2,
       prev: 'page1',
-      next: 'page2',
+      next: 'page1',
       content: (
          <Suspense>
             <Page2 />

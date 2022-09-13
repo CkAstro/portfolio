@@ -1,4 +1,5 @@
 export * from './Contact';
-export * from './NucleoDisplay';
 export * from './MouseLocation';
+export * from './NeuralNet';
+export * from './NucleoDisplay';
 export * from './Routes';
