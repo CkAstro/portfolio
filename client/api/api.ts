@@ -2,12 +2,13 @@
 import axios from 'axios';
 import type { ContactMessage } from '@/types';
 
+const PORT = process.env.PORT || 3001;
 const getBaseUrl = (host: string): string => {
-   if (host.includes('localhost') || host.includes('192')) return `http://${host}:3004/api`;
+   if (host.includes('localhost') || host.includes('192')) return `http://${host}:${PORT}/api`;
    return '/api';
 };
 
-const baseUrl = getBaseUrl(window.location.host);
+const baseUrl = getBaseUrl(window.location.hostname);
 
 const getCSMData = (mrto: number, vwind: number, vrto: number): Promise<any> => {
    const request = axios.get(`${baseUrl}/csm/${mrto}/${vwind}/${vrto}`);
@@ -15,6 +16,8 @@ const getCSMData = (mrto: number, vwind: number, vrto: number): Promise<any> => 
 };
 
 const getNeuralNet = (): Promise<any> => {
+   console.log('looking for ', `${baseUrl}/nn/network.json`)
+
    const request = axios.get(`${baseUrl}/nn/network.json`);
    return request.then((response) => response.data);
 };
