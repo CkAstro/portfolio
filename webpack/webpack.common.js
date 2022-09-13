@@ -33,16 +33,18 @@ module.exports = function () {
             },
          }),
          new HtmlWebpackPlugin({
-            template: '../public/index.html',
+            template: '../index.html',
+            favicon: '../public/favicon.ico',
          }),
          new CopyWebpackPlugin({
-            patterns: [{ from: 'static', noErrorOnMissing: true }],
+            patterns: [{ from: '../public', noErrorOnMissing: true }],
          }),
       ],
       resolve: {
          alias: {
             '@/types': path.resolve(__dirname, '../types'),
             '@': path.resolve(__dirname, '../client'),
+            '~': path.resolve(__dirname, '../server'),
          },
          extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       },
@@ -54,9 +56,26 @@ module.exports = function () {
                use: ['babel-loader'],
             },
             {
-               test: /\.(woff2|woff|ttf|png|jpg|jpeg|gif|bmp|webp)$/,
+               test: /\.(png|jpg|jpeg|gif|bmp|webp)$/,
                type: 'asset',
             },
+            {
+               test: /\.(woff2|woff|ttf)$/,
+               type: 'asset/resource',
+            },
+            // {
+            //    test: /\.(woff2|woff|tff)$/,
+            //    use: [
+            //       {
+            //          loader: 'url-loader',
+            //          options: {
+            //             name: '[name].[ext]',
+            //             outputPath: 'fonts',
+            //             esModule: false,
+            //          },
+            //       },
+            //    ],
+            // },
             {
                test: /\.svg$/,
                type: 'asset',
