@@ -586,9 +586,9 @@ module.exports = {
                   group: 'internal',
                },
                {
-                  pattern: '~/**',
+                  pattern: '@server/**',
                   group: 'internal',
-               }
+               },
                {
                   pattern: './*.module.scss',
                   group: 'object',

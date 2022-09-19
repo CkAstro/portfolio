@@ -5,13 +5,16 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const svgToMiniDataURI = require('mini-svg-data-uri');
+const Dotenv = require('dotenv-webpack');
+
+const root = path.resolve(__dirname, '../');
 
 module.exports = function () {
    return {
-      context: path.resolve(__dirname, '../client'),
+      context: path.resolve(root, 'client'),
       entry: ['./index'],
       output: {
-         path: path.resolve(__dirname, '../dist'),
+         path: path.resolve(root, 'dist'),
          filename: '[name].[contenthash].js',
          assetModuleFilename: '[name].[contenthash][ext]',
          publicPath: '/',
@@ -20,7 +23,7 @@ module.exports = function () {
       plugins: [
          new ForkTsCheckerWebpackPlugin({
             typescript: {
-               configFile: path.resolve(__dirname, '../tsconfig.json'),
+               configFile: path.resolve(root, 'tsconfig.json'),
                configOverwrite: {
                   compilerOptions: {
                      skipLibCheck: true,
@@ -28,23 +31,29 @@ module.exports = function () {
                      inlineSourceMap: false,
                      declarationMap: false,
                   },
-                  exclude: ['**/*.test.js', '**/*.test.jsx', '**/*.test.ts', '**/*.test.tsx'],
+                  exclude: [
+                     '**/*.test.js', 
+                     '**/*.test.jsx', 
+                     '**/*.test.ts', 
+                     '**/*.test.tsx', 
+                     'server',
+               ],
                },
             },
          }),
          new HtmlWebpackPlugin({
-            template: '../index.html',
+            template: '../public/template.html',
             favicon: '../public/favicon.ico',
          }),
          new CopyWebpackPlugin({
-            patterns: [{ from: '../public', noErrorOnMissing: true }],
+            patterns: [{ from: '../public', noErrorOnMissing: false }],
          }),
+         new Dotenv({path: '.env'}),
       ],
       resolve: {
          alias: {
-            '@/types': path.resolve(__dirname, '../types'),
-            '@': path.resolve(__dirname, '../client'),
-            '~': path.resolve(__dirname, '../server'),
+            '@/types': path.resolve(root, 'types'),
+            '@': path.resolve(root, 'client'),
          },
          extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       },
