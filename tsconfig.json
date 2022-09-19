@@ -14,11 +14,11 @@
       "useUnknownInCatchVariables": true,
       "paths": {
          "@/types": ["types"],
-         "@/*": ["client/*"],
-         "~/*": ["server/*"]
+         "@/*": ["client/*"]
       },
       "typeRoots": ["./types", "node_modules/@types"],
       "baseUrl": "."
    },
+   "exclude": ["node_modules", "server/node_modules"],
    "include": ["client", "server", "types", "test"]
 }

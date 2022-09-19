@@ -27,7 +27,6 @@ module.exports = {
       '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
       '@/test$': '<rootDir>/types',
       '@/(.*)$': '<rootDir>/client/$1',
-      '~/(.*)$': '<rootDir>/server/$1',
    },
    setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
    globalTeardown: '<rootDir>/test/teardown.ts',
