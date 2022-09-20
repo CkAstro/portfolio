@@ -14,8 +14,9 @@
       "useUnknownInCatchVariables": true,
       "paths": {
          "@/types": ["types"],
-         "@/*": ["client/*"],
-         "~/*": ["server/*"]
+         "@/test": ["test"],
+         "@server/*": ["server/*"],
+         "@/*": ["client/*"]
       },
       "typeRoots": ["./types", "node_modules/@types"],
       "baseUrl": "."

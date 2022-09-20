@@ -25,9 +25,10 @@ module.exports = {
    moduleNameMapper: {
       '\\.(jpg|jpeg|png|gif|webp|svg|bmp|woff|woff2|ttf)$': '<rootDir>/test/mocks/fileMock.js',
       '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-      '@/test$': '<rootDir>/types',
+      '@server/(.*)$': '<rootDir>/server/$1',
+      '@/types$': '<rootDir>/types',
+      '@/test$': '<rootDir>/test',
       '@/(.*)$': '<rootDir>/client/$1',
-      '~/(.*)$': '<rootDir>/server/$1',
    },
    setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
    globalTeardown: '<rootDir>/test/teardown.ts',

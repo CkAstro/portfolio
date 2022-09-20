@@ -53,6 +53,7 @@ module.exports = function () {
       resolve: {
          alias: {
             '@/types': path.resolve(root, 'types'),
+            '@/test': path.resolve(root, 'test'),
             '@': path.resolve(root, 'client'),
          },
          extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
